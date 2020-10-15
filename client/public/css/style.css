@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+@import url(//fonts.googleapis.com/css?family=Vibur);
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+html {
+
+  overflow: scroll;
+}
+::-webkit-scrollbar{
+  width: 0px;
+  background: transparent;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background: black;
+  color: #333;
+  line-height: 1.6;
+  height: 100vh;
+  
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+p {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+/* Nav */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  opacity: 0.8;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  padding: 0 30px;
+}
+
+.navbar a {
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+}
+
+.navbar a:hover {
+  border-bottom: red 2px solid;
+}
+
+.navbar ul {
+  /* Line it in a row */
+  display: flex;
+}
+
+.navbar .logo {
+  font-weight: 400;
+}
+
+/* Header */
+
+.hero {
+  background: url("../images/controller.jpg") no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: white;
+}
+
+/* Hero Begins */
+.hero .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.hero .content h1 {
+  font-size: 55px;
+}
+.hero .content p {
+  font-size: 23px;
+  max-width: 600px;
+  margin: 20px 0 30px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(78, 14, 14, 0.1);
+}
+
+.hero * {
+  z-index: 10;
+}
+
+/* Transition CSS */
+
+.transition-fade{
+
+  opacity: 1;
+  transition: 1000ms;
+  transform: translateX(0);
+  transform-origin: left;
+
+}
+
+html.is-animating .transition-fade {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+html.is-leaving .transition-fade{
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* Our Team */
+
+/* Cards */
+
+.card-container {
+  background: url("../images/team.jpg") no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: white;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  padding: 16.875rem 1.5rem;
+}
+.card-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 16, 16, 0.5);
+}
+.card-grid {
+  display: grid;
+  grid-column-gap: 1.5rem; /* adjust gaps between cards */
+  max-width: 75rem; /* adjust the width size of the screen */
+  width: 100%; /* Contain the full width */
+}
+
+@media (min-width: 75rem) /* the width of the media query will be the same as you set above*/ {
+  .card-grid {
+    grid-template-columns: repeat(4 /* Number of profiles */, 1fr);
+  }
+}
+
+.card {
+  opacity: 0.5;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+}
+
+.card-background {
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.9375rem;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  transition: filter 0.2s linear, transform 200ms linear;
+}
+
+.card:hover{
+  opacity: 1.0;
+}
+
+.card:hover .card-background {
+  transform: scale(1.25) translateZ(0);
+  
+}
+
+.card-grid:hover > .card:not(:hover) .card-background {
+  filter: brightness(.5) saturate(1) contrast(1) blur(1.25rem); /* Adjust the as seen fit for unfocused profiles */
+}
+
+.card-content{
+  padding: 14.375rem 1.25rem;
+  position: absolute;
+  top: 0;
+}
+
+.card-description{
+  color: rgba(255,255,255, .5); /* Change the color of description */
+  font-size: .9rem;
+  text-transform: uppercase;
+}
+.card-heading{
+  color: rgba(255,255,255, .9); /* Adjust Profile Name Color */
+  font-size: 1.9rem;
+  text-shadow: 0.125rem 0.125rem 1.25rem rgba(0,0,0,.2) /* Text shadow Adjustment */
+}
+
+.our-team{
+  text-align: center;
+  height: 250px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  user-select: none;
+}
+
+.our-team b{
+  font: 400 19vh "vibur";
+  color: rgb(177, 110, 184);
+  text-shadow: 0 -40px 100px,
+  0 0 2px,
+  0 0 1em #ff4444,
+  0 0 0.5em #ff4444,
+  0 10px 3px #000;
+
+}
+.our-team b span{
+  animation: blink linear infinite 2s;
+}
+.our-team b span:nth-child(2){
+  animation: blink linear infinite 3s;
+
+}
+@keyframes blink
+{
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+    color: #333
+  }
+  80%{
+    text-shadow: none;
+  }
+  81%{
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82%
+  {
+    color: #333;
+  }
+  83%
+  {
+    color: inherit;
+    text-shadow: none;
+  }
+  92%{
+    color: #333;
+    text-shadow: none;
+  }
+  92.5%{
+    color: inherit;
+    text-shadow: inherit;
+  }
+}

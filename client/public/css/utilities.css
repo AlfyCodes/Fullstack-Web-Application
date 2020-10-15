@@ -1,0 +1,42 @@
+/* Text colors go here */
+
+.text-primary {
+  color: red;
+}
+.text-secondary {
+  color: black;
+}
+
+/* Button Styling */
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  background-color: rgb(141, 33, 33);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-primary {
+  color: rgb(179, 45, 45);
+  color: white;
+}
+
+.btn-secondary {
+  color: black;
+  color: white;
+}
+.btn-dark {
+  color: #333;
+  color: white;
+}
+.btn-light {
+  color: #f4f4f4;
+  color: #333;
+}
