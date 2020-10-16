@@ -1,3 +1,5 @@
+This is a branch that was taken from my team repo. I wanted to show this project on my public display repos. I'll be updating this as I update it in the team repo. Also please note this is not the finished product. We are gradually building it. 
+
 # Alfys Coding Cave
 
 Don't touch.....
